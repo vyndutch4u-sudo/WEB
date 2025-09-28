@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Webme</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="gambar.jpg" type="image/jpeg" />
+
+  <style>
+    :root {
+      --bg: #0f1720;
+      --card: #0b1220;
+      --accent: #4fc3f7;
+      --text: #e6eef6;
+      --text-soft: #bcd6e8;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+      background: linear-gradient(180deg, #071021 0%, var(--bg) 100%);
+      color: var(--text);
+    }
+
+    /* Animasi */
+    @keyframes fadeZoom {
+      0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .wrap {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    .card {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      max-width: 380px;
+      width: 100%;
+      animation: fadeZoom 0.8s ease-out forwards;
+    }
+    .avatar {
+      width: 170px;
+      height: 170px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: block;
+      border: 4px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 -6px 30px rgba(0,0,0,0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      opacity: 0;
+      animation: popIn 0.8s ease-out 0.3s forwards;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .avatar:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.7), 0 2px 6px rgba(79,195,247,0.12);
+    }
+    h1 {
+      margin: 6px 0 4px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #f0f7fb;
+      opacity: 0;
+      animation: fadeZoom 0.7s ease-out 0.6s forwards;
+    }
+    p {
+      margin: 0 0 12px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      opacity: 0;
+      animation: fadeZoom 0.7s ease-out 0.8s forwards;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: linear-gradient(90deg, rgba(79,195,247,0.14), rgba(79,195,247,0.06));
+      color: var(--accent);
+      border: 1px solid rgba(79,195,247,0.2);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.14s ease, background 0.2s ease;
+      opacity: 0;
+      animation: fadeZoom 0.7s ease-out 1s forwards;
+    }
+    .btn:hover { background: rgba(79,195,247,0.2); }
+    .btn:active { transform: scale(.96); }
+
+    /* Menu Sosial */
+    .menu {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      opacity: 0;
+      animation: fadeZoom 0.8s ease-out 1.2s forwards;
+    }
+    .menu a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.05);
+      text-decoration: none;
+      font-size: 1.3rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+      color: white;
+    }
+    .menu a:hover { transform: scale(1.15); background: rgba(255,255,255,0.12); }
+
+    /* Emoji Ikon */
+    .wa { color: #25D366; }   /* WhatsApp hijau */
+    .yt { color: #FF0000; }   /* YouTube merah */
+    .tt { color: #fff; background: linear-gradient(135deg,#25F4EE 0%,#FE2C55 100%); }
+    
+    @media (max-width: 420px) {
+      .avatar { width: 140px; height: 140px; }
+      .card { padding: 20px; border-radius: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <a href="gambar.jpg" target="_blank" class="avatar">
+        <img src="gambar.jpg" alt="Ikon Profil">
+      </a>
+      <h1>Judul Web</h1>
+      <p>Klik ikon di atas untuk lihat ukuran penuh.</p>
+      <a class="btn" href="gambar.jpg" target="_blank">Buka Gambar</a>
+
+      <!-- Menu Sosial -->
+      <div class="menu">
+        <!-- WhatsApp -->
+        <a class="wa" target="_blank" href="https://wa.me/628996173923?text=Aku%20Tertarik%20Dengan%20web%20Mu%2Cbisakah%20aku%20membelinya%3F">📱</a>
+        <!-- YouTube -->
+        <a class="yt" target="_blank" href="https://youtube.com/">▶️</a>
+        <!-- TikTok -->
+        <a class="tt" target="_blank" href="https://tiktok.com/">🎵</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
